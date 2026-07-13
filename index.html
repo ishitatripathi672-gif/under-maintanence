@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Container */
+        .maintenance-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Animation Graphics */
+        .animation-box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Big Gear */
+        .gear-one {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            fill: #38bdf8;
+            animation: rotate-clockwise 8s linear infinite;
+        }
+
+        /* Small Gear */
+        .gear-two {
+            position: absolute;
+            top: 95px;
+            left: 115px;
+            width: 60px;
+            height: 60px;
+            fill: #0ea5e9;
+            animation: rotate-counter 5s linear infinite;
+        }
+
+        /* Glowing Pulse Background */
+        .pulse-circle {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Text Styling */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+            background: linear-gradient(to right, #f8fafc, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: #334155;
+            border-radius: 100px;
+            padding: 4px;
+            width: 80%;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+            height: 10px;
+            border-radius: 100px;
+            width: 65%; /* Change this % to reflect actual progress */
+            animation: loading 2s ease-out forwards;
+        }
+
+        /* Footer / Status hint */
+        .status-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* KEYFRAMES ANIMATIONS */
+        @keyframes rotate-clockwise {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-counter {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.6); opacity: 0.6; }
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 65%; } /* Matches the width above */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+            .animation-box { transform: scale(0.85); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="maintenance-container">
+        <!-- Animated Graphics -->
+        <div class="animation-box">
+            <div class="pulse-circle"></div>
+            <!-- Gear 1 (Big) -->
+            <svg class="gear-one" viewBox="0 0 24 24">
+                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l-.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+            </svg>
+            <!-- Gear 2 (Small) -->
+            <svg class="gear-two" viewBox="0 0 24 24">
+                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l-.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+            </svg>
+        </div>
+
+        <!-- Content -->
+        <h1>We'll Be Right Back</h1>
+        <p>We are currently performing scheduled maintenance to improve our systems. We apologize for the inconvenience and appreciate your patience!</p>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <!-- Status Badge -->
+        <div class="status-badge">Estimated Time: 2 Hours</div>
+    </div>
+
+</body>
+</html>
